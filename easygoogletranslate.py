@@ -60,7 +60,7 @@ class EasyGoogleTranslate:
 
     def make_request(self, target_language, source_language, text, timeout):
         escaped_text = urllib.parse.quote(text.encode('utf8'))
-        url = 'https://translate.google.com/m?tl=%s&sl=%s&q=%s'%(target_language, source_language, escaped_text)
+        url = 'https://translate.google.co.in/m?tl=%s&sl=%s&q=%s'%(target_language, source_language, escaped_text)
         response = requests.get(url, timeout=timeout)
         result = response.text.encode('utf8').decode('utf8')
         result = re.findall(self.pattern, result)
